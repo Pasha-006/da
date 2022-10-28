@@ -1,0 +1,5 @@
+install.packages("party")
+library(party)
+d1<-data.frame(readingSkills)
+outputtree<-ctree(nativeSpeaker~age+shoeSize+score,data=d1)
+plot(outputtree)
