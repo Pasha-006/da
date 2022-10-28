@@ -1,0 +1,9 @@
+cars<-data.frame(mtcars)
+cars
+hist(cars$mpg)
+hist(cars$wt)
+plot(mpg~wt,data=cars)
+cor(cars$mpg,cars$wt)
+linearmod=lm(mpg~wt,data=cars)
+linearmod
+summary(linearmod)
