@@ -1,0 +1,1 @@
+hist(airquality($Temp,col='steelblue',main=Maximum Daily Temparature',xlab='Temparature(degrees Fahrenheit)')
