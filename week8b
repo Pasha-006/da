@@ -1,0 +1,21 @@
+library(cluster)
+iris_1<-iris[1:4]
+iris_1
+set.seed(240)
+km<-pam(iris_1,k=3)
+km
+km$cluster
+cm<-table(iris$Species,km$cluster)
+cm
+plot(iris_1[c("Sepal.Length","Sepal.Width")],col=km$cluster,main="K-means with 3 clusters")
+y_kmeans<-km$cluster
+clusplot(iris_1[,c("Sepal.Length","Sepal.Width")],
+         y_kmeans,
+         lines=1,
+         shade=FALSE,
+         color=TRUE,
+         labels=1,
+         span=TRUE,
+         main=paste("Cluster hh iris"),
+         xlab='Sepal.Length',
+         ylab='Sepal.Width')
