@@ -1,0 +1,2 @@
+with(subset(airquality,Month=9),plot(Wind,Ozone,col='steelblue',pch=20,cex=1.5))
+title("Wind and Temparature in NYC in septembber of 1973")
