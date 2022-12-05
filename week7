@@ -1,0 +1,11 @@
+iris
+a=iris[,c(1,4)]
+a
+a1=head(a,10)
+a1
+
+a2=dist(a1,method="euclidean",diag=TRUE,upper=TRUE)
+a2
+
+irisclusters=hclust(a2)
+plot(irisclusters,col="magenta",main="Dendogram",hang=-1)
