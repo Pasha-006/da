@@ -1,0 +1,2 @@
+with(subset(air quality,Month==9),plot(Wind,Ozone,col='steelblue',pch=20,CeX=1.5)) 
+title(" Wind and Temperature in NYC in September") 
