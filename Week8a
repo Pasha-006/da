@@ -1,0 +1,58 @@
+#partition clustering
+
+library(ClusterR)
+library(cluster)
+
+iris_1 <- iris[1:4]
+
+set.seed(240)
+
+kmediods.re <- pam(iris_1, k = 3)
+
+kmediods.re
+
+
+kmediods.re$cluster
+
+kmediods.re$size
+
+cm<-table(iris$Species, kmediods.re$cluster)
+
+cm
+
+plot(iris_1[c("Sepal.Length", "Sepal.Width")],
+     
+col = kmediods.re$cluster)
+
+plot(iris_1[c("Sepal.Length", "Sepal.Width")],
+col = kmediods.re$cluster, main = 'K-means with 3 clusters')
+
+kmediods.re$centers
+
+kmediods.re$centers[,c("Sepal.Length", "Sepal.Width")]
+
+points(kmediods.re$centers[,c("Sepal.Length", "Sepal.Width")],
+
+col = 1:3, pch = 4, cex = 3)
+
+y_kmeans <- kmediods.re$cluster
+
+clusplot(iris_1[,c("Sepal.Length", "Sepal.Width")],
+
+y_kmeans,
+
+lines=1,
+
+shade = FALSE,
+
+color = TRUE,
+
+labels = 1,
+
+span= TRUE,
+
+main =paste("Cluster iris"),
+
+xlab = 'Sepal.Length',
+                            
+ylab = 'Sepal.Width')
